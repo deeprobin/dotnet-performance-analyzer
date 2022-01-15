@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run tests (Debug)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/tests/PerformanceAnalyzer.Test/bin/Debug/net6.0/PerformanceAnalyzer.Test.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/tests/PerformanceAnalyzer.Test",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}

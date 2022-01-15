@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>PerformanceAnalyzer</PackageId>
+    <PackageVersion>1.0.0-pre</PackageVersion>
+    <Authors>Robin Lindner</Authors>
+    <PackageLicenseUrl>https://github.com/deeprobin/dotnet-performance-analyzer/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/deeprobin/dotnet-performance-analyzer/#readme</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/deeprobin/dotnet-performance-analyzer</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>This is an extension that contains code analyzers and fixers for the .NET Compiler Platform ("Roslyn") that might improve performance.</Description>
+    <PackageReleaseNotes>Summary of changes made in this release of the package.</PackageReleaseNotes>
+    <Copyright>Copyright</Copyright>
+    <PackageTags>PerformanceAnalyzer, analyzers</PackageTags>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PerformanceAnalyzer.CodeFixes.CSharp\PerformanceAnalyzer.CodeFixes.CSharp.csproj" />
+    <ProjectReference Include="..\PerformanceAnalyzer.Analyzers.CSharp\PerformanceAnalyzer.Analyzers.CSharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tools\*.ps1" CopyToOutputDirectory="Always" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <Target Name="_AddAnalyzersToOutput">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\PerformanceAnalyzer.dll" PackagePath="analyzers/dotnet/cs" />
+      <TfmSpecificPackageFile Include="$(OutputPath)\PerformanceAnalyzer.CodeFixes.dll" PackagePath="analyzers/dotnet/cs" />
+    </ItemGroup>
+  </Target>
+
+</Project>

@@ -1,0 +1,75 @@
+name: Upload dotnet package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+      - run: dotnet build --configuration Release
+      - name: Create the package
+        run: dotnet pack --configuration Release
+      - name: Upload VSIX artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./src/PerformanceAnalyzer.Vsix/bin/Release/net472/PerformanceAnalyzer.Vsix.vsix
+          asset_name: PerformanceAnalyzer.vsix
+          asset_content_type: application/vsix
+      - name: Upload library artifact (PerformanceAnalyzer)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./src/PerformanceAnalyzer/bin/Release/netstandard2.0/PerformanceAnalyzer.dll
+          asset_name: PerformanceAnalyzer.dll
+          asset_content_type: application/zip
+      - name: Upload library artifact (PerformanceAnalyzer.CodeFixes)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./src/PerformanceAnalyzer.CodeFixes/bin/Release/netstandard2.0/PerformanceAnalyzer.CodeFixes.dll
+          asset_name: PerformanceAnalyzer.CodeFixes.dll
+          asset_content_type: application/zip
+      - name: Upload library artifact (PerformanceAnalyzer.Package)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./src/PerformanceAnalyzer.Package/bin/Release/netstandard2.0/PerformanceAnalyzer.Package.dll
+          asset_name: PerformanceAnalyzer.Package.dll
+          asset_content_type: application/zip
+      - name: Upload NuGet artifact (PerformanceAnalyzer.Package)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./src/PerformanceAnalyzer.Package/bin/Release/*.nupkg
+          asset_name: PerformanceAnalyzer.nupkg
+          asset_content_type: application/zip
+      - name: Upload library artifact (PerformanceAnalyzer.Vsix)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./src/PerformanceAnalyzer.Vsix/bin/Release/net472/PerformanceAnalyzer.Vsix.dll
+          asset_name: PerformanceAnalyzer.Vsix.dll
+          asset_content_type: application/zip

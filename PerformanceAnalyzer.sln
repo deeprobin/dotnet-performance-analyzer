@@ -1,0 +1,77 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{7681C439-A498-4083-A1D9-957980AE56D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceAnalyzer", "src\PerformanceAnalyzer\PerformanceAnalyzer.csproj", "{A896BBB7-2864-457E-8825-CD2C279643F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceAnalyzer.Package", "src\PerformanceAnalyzer.Package\PerformanceAnalyzer.Package.csproj", "{32F8A3EF-15AD-46A9-B130-E772B84E8E6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzers", "Analyzers", "{138596FC-1492-496F-B204-3151FF1C89F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceAnalyzer.Analyzers.CSharp", "src\PerformanceAnalyzer.Analyzers.CSharp\PerformanceAnalyzer.Analyzers.CSharp.csproj", "{51344790-E143-4F89-8D3F-82FB4533C005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceAnalyzer.Analyzers.CSharp.Tests", "tests\PerformanceAnalyzer.Analyzers.CSharp.Tests\PerformanceAnalyzer.Analyzers.CSharp.Tests.csproj", "{E73BFB2F-3732-4943-AEBA-9AD4989F6B26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeFixes", "CodeFixes", "{D69B312D-EE57-4B6C-BA21-FA430F76A6CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceAnalyzer.CodeFixes.CSharp", "src\PerformanceAnalyzer.CodeFixes.CSharp\PerformanceAnalyzer.CodeFixes.CSharp.csproj", "{BEC94C98-8A79-47CB-AD4C-AF79BF086EEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceAnalyzer.CodeFixes.CSharp.Tests", "tests\PerformanceAnalyzer.CodeFixes.CSharp.Tests\PerformanceAnalyzer.CodeFixes.CSharp.Tests.csproj", "{D588517A-D65B-4BE8-8C6D-9EACF57F8741}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisualStudioIntegration", "VisualStudioIntegration", "{19918FF1-9518-4337-A7A5-7570D529FBFA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceAnalyzer.Vsix", "src\PerformanceAnalyzer.Vsix\PerformanceAnalyzer.Vsix.csproj", "{4DF99A5B-5558-4B21-9437-C312F6D98CEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A896BBB7-2864-457E-8825-CD2C279643F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A896BBB7-2864-457E-8825-CD2C279643F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A896BBB7-2864-457E-8825-CD2C279643F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A896BBB7-2864-457E-8825-CD2C279643F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51344790-E143-4F89-8D3F-82FB4533C005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51344790-E143-4F89-8D3F-82FB4533C005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51344790-E143-4F89-8D3F-82FB4533C005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51344790-E143-4F89-8D3F-82FB4533C005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC94C98-8A79-47CB-AD4C-AF79BF086EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC94C98-8A79-47CB-AD4C-AF79BF086EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC94C98-8A79-47CB-AD4C-AF79BF086EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC94C98-8A79-47CB-AD4C-AF79BF086EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F8A3EF-15AD-46A9-B130-E772B84E8E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F8A3EF-15AD-46A9-B130-E772B84E8E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F8A3EF-15AD-46A9-B130-E772B84E8E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F8A3EF-15AD-46A9-B130-E772B84E8E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF99A5B-5558-4B21-9437-C312F6D98CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF99A5B-5558-4B21-9437-C312F6D98CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF99A5B-5558-4B21-9437-C312F6D98CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF99A5B-5558-4B21-9437-C312F6D98CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73BFB2F-3732-4943-AEBA-9AD4989F6B26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73BFB2F-3732-4943-AEBA-9AD4989F6B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73BFB2F-3732-4943-AEBA-9AD4989F6B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73BFB2F-3732-4943-AEBA-9AD4989F6B26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D588517A-D65B-4BE8-8C6D-9EACF57F8741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D588517A-D65B-4BE8-8C6D-9EACF57F8741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D588517A-D65B-4BE8-8C6D-9EACF57F8741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D588517A-D65B-4BE8-8C6D-9EACF57F8741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A896BBB7-2864-457E-8825-CD2C279643F2} = {7681C439-A498-4083-A1D9-957980AE56D5}
+		{51344790-E143-4F89-8D3F-82FB4533C005} = {138596FC-1492-496F-B204-3151FF1C89F1}
+		{BEC94C98-8A79-47CB-AD4C-AF79BF086EEC} = {D69B312D-EE57-4B6C-BA21-FA430F76A6CF}
+		{32F8A3EF-15AD-46A9-B130-E772B84E8E6D} = {7681C439-A498-4083-A1D9-957980AE56D5}
+		{4DF99A5B-5558-4B21-9437-C312F6D98CEE} = {19918FF1-9518-4337-A7A5-7570D529FBFA}
+		{E73BFB2F-3732-4943-AEBA-9AD4989F6B26} = {138596FC-1492-496F-B204-3151FF1C89F1}
+		{D588517A-D65B-4BE8-8C6D-9EACF57F8741} = {D69B312D-EE57-4B6C-BA21-FA430F76A6CF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA4FD019-CF37-4A74-9A08-8DE19A7733D8}
+	EndGlobalSection
+EndGlobal
